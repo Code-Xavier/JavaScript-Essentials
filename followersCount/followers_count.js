@@ -31,6 +31,14 @@ function checkCountValue() {
         checkCountValue(); // Check count value and display messages
       }
 
+// Function to reset the followers count
+function resetCount() {
+    // Reset the count to 0
+    document.getElementById('countDisplay').textContent = '0';
+    
+    // Display an alert message
+    alert('The Followers count has been reset.');
+}
 
 
 
