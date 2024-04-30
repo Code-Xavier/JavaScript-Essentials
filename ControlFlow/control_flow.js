@@ -50,6 +50,36 @@ let authenticationStatus = isAuthenticated ? "Authenticated" : "Not authenticate
 
 console.log("Authentication Status:", authenticationStatus);
 
+// Function to check access level based on the role
+function checkAccess(role) {
+    // Using if-else statements to determine access based on the role
+    if (role === 'Employee') {
+        // Employees have full access to Dietary Services
+        console.log('You are authorized to have access to "Dietary Services".');
+    } else if (role === 'Enrolled Member') {
+        // Enrolled Members have full access plus additional privileges
+        console.log('You are authorized to have access to "Dietary Services" and one-on-one interaction with a dietician.');
+    } else if (role === 'Subscriber') {
+        // Subscribers have partial access
+        console.log('You are authorized to have partial access to "Dietary Services".');
+    } else if (role === 'Non-Subscriber') {
+        // Non-Subscribers are prompted to subscribe or enroll
+        console.log('You need to enroll or at least subscribe first to avail this facility.');
+    } else {
+        // Handle invalid or undefined roles
+        console.log('Invalid role specified.');
+    }
+}
+
+// Test cases to demonstrate the function's behavior with different roles
+checkAccess('Employee');          // Expected: Full access message for Employee
+checkAccess('Enrolled Member');   // Expected: Full access with dietician interaction for Enrolled Member
+checkAccess('Subscriber');        // Expected: Partial access message for Subscriber
+checkAccess('Non-Subscriber');    // Expected: Message prompting to enroll or subscribe for Non-Subscriber
+checkAccess('Other');             // Expected: Invalid role message for any other input
+
+// This function helps determine what type of dietary services are available to a person based on their role within the organization.
+// It is useful in scenarios where different levels of access to services are granted based on the user's status or membership type.
 
 
 
